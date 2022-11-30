@@ -35,8 +35,8 @@ public class SimplePrefetchMultiThreadedProcessData {
                     var future = executor.submit(() -> {
                         semaphore.acquire();
                         try {
-                            var enrichedTestData = PersonDataService.getEnrichedPersonData(personData);
-                            System.out.println(enrichedTestData.id() + " - " + enrichedTestData.detail() + " -- " + elapsedTimeMonitor.getElapsedTimeMillis());
+                            var enrichedPersonData = PersonDataService.getEnrichedPersonData(personData);
+                            System.out.println(enrichedPersonData.id() + " - " + enrichedPersonData.detail() + " -- " + elapsedTimeMonitor.getElapsedTimeMillis());
                         } finally {
                             semaphore.release();
                         }
